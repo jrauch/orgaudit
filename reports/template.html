@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Repo report for </title>
+    <style>
+    tr:nth-child(even) {background: #CCC}
+	tr:nth-child(odd) {background: #FFF}
+	h4 {margin-top: 10px;margin-bottom: 0px;}
+	table {width: 20%; border: 1px solid black;}
+	.filec {width: 200px;}
+	.commit {width: 100px;}
+	.subc {font-style: italic; margin-top: 0px; margin-bottom: 0px;}
+    </style>
+</head>
+<body>
+{%- if report_data|length > 0 -%}
+	{%- for repo, userlist in report_data.iteritems() -%}
+	<h2> Users associated with {{repo}}</h2>
+		<table>
+		{%- for user in userlist -%}
+			<tr>
+			<td>{{user}}</td>
+			</tr>
+		{%- endfor -%}
+		</table>
+	{%- endfor -%}
+{%- endif -%}
+</body>
